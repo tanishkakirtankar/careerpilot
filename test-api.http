@@ -1,0 +1,74 @@
+POST http://localhost:8080/api/auth/register
+Content-Type: application/json
+
+{
+    "name": "Tanishka",
+    "email": "tanishka2@test.com",
+    "password": "12345",
+    "role": "STUDENT"
+}
+
+### Login
+POST http://localhost:8080/api/auth/login
+Content-Type: application/json
+
+{
+    "email": "tanishka2@test.com",
+    "password": "12345"
+}
+
+### Wrong password
+POST http://localhost:8080/api/auth/login
+Content-Type: application/json
+
+{
+    "email": "tanishka2@test.com",
+    "password": "wrongpassword"
+}
+
+### Get user profile
+GET http://localhost:8080/api/users/1
+
+### Create Resume
+POST http://localhost:8080/api/resumes
+Content-Type: application/json
+
+{
+    "education": "B.Tech Computer Science",
+    "skills": "Java, Spring Boot, C++, PostgreSQL",
+    "experience": "Student Developer",
+    "projects": "CareerPilot",
+    "github": "github.com/tanishka",
+    "linkedin": "linkedin.com/in/tanishka"
+}
+
+### Get Resume
+GET http://localhost:8080/api/resumes/1
+
+### Create Job
+POST http://localhost:8080/api/jobs
+Content-Type: application/json
+
+{
+    "title": "Java Backend Developer",
+    "company": "Tech Solutions",
+    "location": "Bangalore",
+    "description": "Looking for a Java and Spring Boot developer.",
+    "skillsRequired": "Java, Spring Boot, PostgreSQL",
+    "salary": 800000
+}
+
+### Get All Jobs
+GET http://localhost:8080/api/jobs
+
+### Apply for Job
+POST http://localhost:8080/api/applications
+Content-Type: application/json
+
+{
+    "userId": 1,
+    "jobId": 1
+}
+
+### Get User Applications
+GET http://localhost:8080/api/applications/user/1
